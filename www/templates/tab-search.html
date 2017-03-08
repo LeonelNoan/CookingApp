@@ -1,0 +1,26 @@
+<ion-view view-title="Rechercher">
+    <ion-content padding="false" scroll="false" ng-style="{'background-image': 'url(img/bg.png)', 'background-size': 'cover'}">
+        <div class="card">
+            <div class="item item-divider text-center">
+                <i class="ionicons ion-fireball"></i> Recherche rapide
+            </div>
+            <div class="item item-image">
+                <img src="img/1.jpg" class="full-image">
+            </div>
+            <div class="item item-text-wrap">
+                <form>
+                    <div class="list">
+                        <label class="item item-input">
+                            <input type="text" placeholder="Mots clés" ng-model="query">
+                        </label>
+                    </div>
+                </form>
+            </div>
+            <div class="item item-divider text-center">
+                <a href="" class="button button-positive button" ng-click="search(query)">
+                    <i class="ionicons ion-search"></i>
+                </a>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

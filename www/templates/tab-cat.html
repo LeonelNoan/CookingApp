@@ -1,0 +1,20 @@
+<ion-view view-title="Categories">
+    <ion-content>
+        <ion-list class="cat-list col-90">
+            <ion-item ng-repeat="cat in cats"
+                      ng-click="showList({{cat.id}})"
+                      class="cat-item">
+                <span class="mask-cat"></span>
+                <img class="cat-item-bg" ng-src="img/{{cat.id}}.jpg" alt="" />
+                <span class="cat-title">
+                    <span class="cat-item-icon">
+                        <img ng-src="img/icon-{{cat.id}}.png" alt="" />
+                    </span>
+                    <span class="cat-item-txt">
+                        {{cat.name | uppercase}}
+                    </span>
+                    </span>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

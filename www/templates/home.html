@@ -1,0 +1,105 @@
+<ion-view view-title="Catalogue">
+    <ion-content class="home">
+
+        <ion-slide-box>
+
+            <ion-slide ng-repeat="item in recettes" ng-click="showDetail({{$index}})">
+                <div class="box blue" style="background-image: url(img/rec/{{item.rctId}}.jpg)">
+
+                    <div class="box-content">
+                        <p class="avatar">
+                            <img ng-src="img/usr/{{item.user.userId}}.jpg" alt="" />
+                        </p>
+                        <h1 ng-bind="item.libelle"></h1>
+                        <p class="coocker">Réalisé par <i>{{item.user.prenom}}</i></p>
+                    </div>
+
+                </div>
+            </ion-slide>
+
+        </ion-slide-box>
+
+        <div class="row home-third">
+            <div class="box-2 col col-50 cat-item first" style="background-image: url({{cats.ntr.bg}})" ng-click="showList({{cats.ntr.id}})">
+
+                <div class="cat-title">
+                    <div>
+
+                        <p class="cat-item-icon">
+                            <img ng-src="{{cats.ntr.face}}" alt="" />
+                        </p>
+                        <p class="cat-item-txt" ng-bind="cats.ntr.name">
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="box-2 col col-50 cat-item" style="background-image: url({{cats.dsr.bg}})" ng-click="showList({{cats.dsr.id}})">
+                <div class="cat-title">
+                    <div>
+
+                        <p class="cat-item-icon">
+                            <img ng-src="{{cats.dsr.face}}" alt="" />
+                        </p>
+                        <p class="cat-item-txt" ng-bind="cats.dsr.name">
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row home-second">
+            <div class="box-2 col col-50 cat-item first" style="background-image: url({{cats.pr.bg}})" ng-click="showList({{cats.pr.id}})">
+                <div class="cat-title">
+                    <div>
+
+                        <p class="cat-item-icon">
+                            <img ng-src="{{cats.pr.face}}" alt="" />
+                        </p>
+                        <p class="cat-item-txt" ng-bind="cats.pr.name">
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="box-2 col col-50 cat-item" style="background-image: url({{cats.plt.bg}})" ng-click="showList({{cats.plt.id}})">
+                <div class="cat-title">
+
+                    <div>
+
+                        <p class="cat-item-icon">
+                            <img ng-src="{{cats.plt.face}}" alt="" />
+                        </p>
+                        <p class="cat-item-txt" ng-bind="cats.plt.name">
+                        </p>
+
+                </div>
+
+            </div>
+
+        </div>
+    
+     </div>
+
+        <div class="row home-third">
+            <div class="box-2 col col-100 cat-item first" style="background-image: url({{cats.cmp.bg}})" ng-click="showList({{cats.cmp.id}})">
+
+                <div class="cat-title">
+                    <div>
+
+                        <p class="cat-item-icon">
+                            <img ng-src="{{cats.cmp.face}}" alt="" />
+                        </p>
+                        <p class="cat-item-txt" ng-bind="cats.cmp.name">
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </ion-content>
+
+
+</ion-view>

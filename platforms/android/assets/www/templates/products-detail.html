@@ -1,0 +1,71 @@
+<ion-view view-title="Details">
+    <ion-content class="full-card">
+        <ion-slide-box>
+
+            <ion-slide ng-repeat="item in itemsDetails">
+                <div class="box blue">
+
+                    <div class="maskk"></div>
+                    <div class="box-header" style="background: url(img/rec/{{item.rctId}}.jpg) no-repeat center center fixed; background-size: cover;">
+
+                    </div>
+                    <div class="box-content">
+                        <p class="avatar">
+                            <img ng-src="img/usr/{{item.user.userId}}.jpg" alt="" />
+                            <div class="avatar-name">{{item.user.prenom}} {{item.user.nom}}</div>
+                        </p>
+                        <h1 ng-bind="item.libelle"></h1>
+                        <p class="coocker">
+                            <span class="coocker-item">
+                                <span>
+                                    <img src="img/lvl.png" />
+                                </span>
+                                {{ item.lvl | rateName:"lvl" }}
+                            </span>
+                            <span class="coocker-item">
+                                <span>
+                                    <img src="img/cooked.png" />
+                                </span>
+                                essayé par {{item.nbRealisations}} pers.
+                            </span>
+                            <span class="coocker-item">
+                                <span>
+                                    <img src="img/bowl.png" />
+                                </span>
+                                {{item.tmpPreparation}} min.
+                            </span>
+                            <span class="coocker-item">
+                                <span>
+                                    <img src="img/stew.png" />
+                                </span>
+                                {{item.tmpCuisson}} min.
+                            </span>
+                        </p>
+
+                    </div>
+
+                    <h3 class="ing-label"><!--<img ng-src="img/basket.png" alt="" />-->Ingrédients</h3>
+
+                    <ion-scroll class="ingredients">
+
+                        <div ng-repeat="ing in item.ingredients" class="ingredient">
+                            <img src="img/ing/{{ing.ingredient.icone}}" />
+                            <p>
+                                {{ing.qte}} {{ing.unite}} de {{ing.ingredient.libelle}}
+                            </p>
+                        </div>
+                    </ion-scroll>
+
+
+                    <div class="btns">
+                        <button class="button button-light" ng-click="cook({{item.rctId}})">
+                            <img ng-src="img/coock.png" alt="" />
+                        </button>
+                    </div>
+
+                </div>
+            </ion-slide>
+
+        </ion-slide-box>
+    </ion-content>
+</ion-view>
